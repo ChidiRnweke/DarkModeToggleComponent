@@ -1,0 +1,20 @@
+dist/**/*.test.js
+
+# ignore the .ts files
+*.ts
+
+# include the .d.ts files
+!*.d.ts
+
+# include the .d.ts files
+*.test.d.ts
+
+jest.config.js
+jest.config.ts
+
+tsconfig.json
+vite.config.js
+vite.config.ts
+
+index.html
+examples/
