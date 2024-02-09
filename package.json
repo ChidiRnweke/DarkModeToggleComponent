@@ -4,7 +4,10 @@
   "description": "A somewhat opinionated plug-and-play dark mode web component.",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "test": "vitest"
   },
   "repository": {
     "type": "git",
@@ -24,11 +27,16 @@
     "url": "https://github.com/ChidiRnweke/DarkModeToggleComponent/issues"
   },
   "homepage": "https://github.com/ChidiRnweke/DarkModeToggleComponent#readme",
-  "dependencies": {
-    "safe-query": "^1.0.3"
-  },
   "devDependencies": {
+    "@types/jest": "^29.5.12",
+    "happy-dom": "^13.3.8",
+    "jsdom": "^24.0.0",
     "prettier": "3.2.5",
-    "typescript": "^5.3.3"
+    "typescript": "^5.2.2",
+    "vite": "^5.1.0",
+    "vitest": "^1.2.2"
+  },
+  "dependencies": {
+    "safe-query": "^1.0.8"
   }
 }

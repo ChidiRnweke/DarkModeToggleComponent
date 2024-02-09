@@ -3,7 +3,79 @@ import {
   getElementOrThrow,
   getLocalStorageOrThrow,
 } from "safe-query";
+import "./initializeDarkMode";
 
+const html = /*html*/ `
+    <style>
+        .switch {
+        position: relative;
+        display: flex;
+        width: 4rem;
+        height: 2rem;
+        place-items: center;
+    }
+
+    .switch .toggle {
+        position: absolute;
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+    .slider {
+        position: absolute;
+        display: block;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc; 
+        transition: .4s;
+        border-radius: 2rem;
+    }
+
+    .dark p {
+        position: relative;
+        transition: .4s;
+        border-radius: 50%;
+    }
+
+    input:checked ~ .slider {
+        background-color: #2196F3;
+    }
+
+    input:focus ~ .slider {
+        box-shadow: 0 0 1px #2196F3; 
+        }
+
+    input:checked ~ p {
+        transform: translateX(2rem); 
+    }
+
+    .dark {
+        position: relative;
+        font-size: 1.3rem;
+        opacity:  85%;
+    }
+
+    p {
+        user-select: none;
+        -moz-user-select: none;
+        -webkit-user-drag: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+    }
+
+    </style>
+    <div class="dark">
+        <label class="switch">
+            <input type="checkbox" class="toggle">
+            <span class="slider round"></span>
+            <p></p>
+        </label>
+    </div>
+        `;
 class DarkModeToggle extends HTMLElement {
   public link!: string;
   public toggleableImages!: NodeListOf<HTMLImageElement>;
@@ -129,75 +201,3 @@ class DarkModeToggle extends HTMLElement {
 }
 
 customElements.define("dark-mode-toggle", DarkModeToggle);
-
-const html = /*html*/ `
-<style>
-    .switch {
-    position: relative;
-    display: flex;
-    width: 4rem;
-    height: 2rem;
-    place-items: center;
-  }
-
-  .switch .toggle {
-    position: absolute;
-    opacity: 0;
-    width: 0;
-    height: 0;
-  }
-
-  .slider {
-    position: absolute;
-    display: block;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc; 
-    transition: .4s;
-    border-radius: 2rem;
-  }
-
-  .dark p {
-    position: relative;
-    transition: .4s;
-    border-radius: 50%;
-  }
-
-  input:checked ~ .slider {
-    background-color: #2196F3;
-  }
-
-  input:focus ~ .slider {
-      box-shadow: 0 0 1px #2196F3; 
-    }
-
-  input:checked ~ p {
-    transform: translateX(2rem); 
-  }
-
-  .dark {
-    position: relative;
-    font-size: 1.3rem;
-    opacity:  85%;
-}
-
-p {
-    user-select: none;
-    -moz-user-select: none;
-    -webkit-user-drag: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
-}
-
-</style>
-<div class="dark">
-    <label class="switch">
-        <input type="checkbox" class="toggle">
-        <span class="slider round"></span>
-        <p></p>
-    </label>
-</div>
-       `;

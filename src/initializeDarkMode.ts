@@ -4,11 +4,11 @@
  * It's used to ensure a consistent theme is applied as soon as possible to avoid a flash of unstyled content (FOUC).
  */
 const initiateLocalStorage = (): void => {
-    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-        localStorage.setItem("theme", "dark");
-    } else {
-        localStorage.setItem("theme", "light");
-    }
+  if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+    localStorage.setItem("theme", "dark");
+  } else {
+    localStorage.setItem("theme", "light");
+  }
 };
 
 /**
@@ -18,17 +18,17 @@ const initiateLocalStorage = (): void => {
  * This should be called at the top of the import list without defer to ensure it runs before the rest of the application.
  */
 const initializeDarkMode = (): void => {
-    const noExistingTheme = localStorage.getItem("theme");
+  const noExistingTheme = localStorage.getItem("theme");
 
-    if (!noExistingTheme) {
-        initiateLocalStorage();
-    }
+  if (!noExistingTheme) {
+    initiateLocalStorage();
+  }
 
-    const currentTheme = localStorage.getItem("theme");
-    if (currentTheme === "dark") {
-        document.documentElement.classList.add("dark-theme");
-    } else {
-        document.documentElement.classList.remove("dark-theme");
-    }
+  const currentTheme = localStorage.getItem("theme");
+  if (currentTheme === "dark") {
+    document.documentElement.classList.add("dark-theme");
+  } else {
+    document.documentElement.classList.remove("dark-theme");
+  }
 };
 initializeDarkMode();
