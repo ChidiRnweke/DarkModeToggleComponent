@@ -1,0 +1,34 @@
+{
+  "name": "dark-mode-toggle-component",
+  "version": "1.0.0",
+  "description": "A somewhat opinionated plug-and-play dark mode web component.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChidiRnweke/DarkModeToggleComponent.git"
+  },
+  "keywords": [
+    "Dark",
+    "Mode",
+    "WebComponent",
+    "Vanilla",
+    "Typescript",
+    "JavaScript"
+  ],
+  "author": "Chidi Nweke",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ChidiRnweke/DarkModeToggleComponent/issues"
+  },
+  "homepage": "https://github.com/ChidiRnweke/DarkModeToggleComponent#readme",
+  "dependencies": {
+    "safe-query": "^1.0.3"
+  },
+  "devDependencies": {
+    "prettier": "3.2.5",
+    "typescript": "^5.3.3"
+  }
+}
