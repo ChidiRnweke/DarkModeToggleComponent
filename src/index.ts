@@ -152,6 +152,7 @@ class DarkModeToggle extends HTMLElement {
       ".toggle",
     ) as HTMLInputElement;
     toggle.addEventListener("click", (e) => {
+      // This is necessary to unsure clicking the button doesn't trigger dark mode more than once.
       e.stopPropagation();
       this.handleDarkModeToggle(toggle.checked);
       this.toggleableImages.forEach((img) => this.toggleImage(img));
