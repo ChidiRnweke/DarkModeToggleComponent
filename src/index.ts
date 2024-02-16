@@ -126,10 +126,8 @@ class DarkModeToggle extends HTMLElement {
     }
     this.setSymbol(toggle.checked);
 
-    this.toggleableImages =
-      document.querySelectorAll<HTMLImageElement>(".dark-toggle");
-    const images = document.querySelectorAll<HTMLImageElement>(".dark-toggle");
-    images.forEach((img) => this.initializeImage(img));
+    this.toggleableImages = document.querySelectorAll<HTMLImageElement>(".dark-toggle");
+    this.toggleableImages.forEach((img) => this.initializeImage(img));
   }
 
   /**
