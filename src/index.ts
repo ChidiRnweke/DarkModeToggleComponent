@@ -99,8 +99,12 @@ class DarkModeToggle extends HTMLElement {
    * Lifecycle callback invoked when the element is inserted into the DOM. It initializes dark mode based on saved preferences and sets up event listeners.
    */
   public connectedCallback(): void {
-    this.addEventListeners();
-    this.initializeDarkMode();
+
+
+    window.addEventListener("DOMContentLoaded", () => {
+      this.initializeDarkMode();
+      this.addEventListeners()
+    })
   }
   /**
    * Initializes the dark mode state based on the user's saved theme preference in localStorage or system preference if not set.

@@ -1,6 +1,6 @@
 {
   "name": "dark-mode-toggle-component",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "A somewhat opinionated plug-and-play dark mode web component.",
   "main": "index.js",
   "scripts": {
