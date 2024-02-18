@@ -1,6 +1,6 @@
 # Dark Mode Toggle Component
 
-The Dark Mode Toggle Component is a lightweight, easy-to-integrate custom element that allows users to switch between dark and light themes on your website. It's designed to be incredibly simple to use, requiring just a single line of HTML to add to your project. This component automatically adds a `.dark-theme` class to the document's root element, enabling seamless theme transitions. It's perfect for projects that aim to provide a user-friendly theme toggling experience with minimal effort.
+The Dark Mode Toggle Component is a lightweight, easy-to-integrate custom element that allows users to switch between dark and light themes on your website. It's designed to be incredibly simple to use, requiring just a single line of HTML to add to your project. This component automatically adds a `.dark` class to the document's root element, enabling seamless theme transitions. It's perfect for projects that aim to provide a user-friendly theme toggling experience with minimal effort.
 
 ![Light mode](examples/light-mode.png)
 ![Dark mode](examples/dark-mode.png)
@@ -41,7 +41,7 @@ That's it! The component will automatically render a toggle switch that allows u
 
 ## Example
 
-The component modifies the document by adding or removing the `.dark-theme` class on the root element. You can define your theme styles using CSS variables in the `:root` and `.dark-theme` selectors.
+The component modifies the document by adding or removing the `.dark` class on the root element. You can define your theme styles using CSS variables in the `:root` and `.dark` selectors.
 
 Here's an example of how you can define your CSS variables for light and dark themes:
 
@@ -51,7 +51,7 @@ Here's an example of how you can define your CSS variables for light and dark th
   --text-color: #000000;
 }
 
-.dark-theme {
+.dark {
   --background-color: #1a1a1a;
   --text-color: #ffffff;
 }

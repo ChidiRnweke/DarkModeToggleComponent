@@ -122,10 +122,10 @@ class DarkModeToggle extends HTMLElement {
 
     const currentTheme = getLocalStorageOrThrow("theme")!;
     if (currentTheme === "dark") {
-      document.documentElement.classList.add("dark-theme");
+      document.documentElement.classList.add("dark");
       toggle.checked = true;
     } else {
-      document.documentElement.classList.remove("dark-theme");
+      document.documentElement.classList.remove("dark");
       toggle.checked = false;
     }
     this.setSymbol(toggle.checked);
@@ -168,7 +168,7 @@ class DarkModeToggle extends HTMLElement {
   private handleDarkModeToggle(isDarkMode: boolean): void {
     this.setSymbol(isDarkMode);
 
-    document.documentElement.classList.toggle("dark-theme", isDarkMode);
+    document.documentElement.classList.toggle("dark", isDarkMode);
     localStorage.setItem("theme", isDarkMode ? "dark" : "light");
   }
 

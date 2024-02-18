@@ -26,9 +26,9 @@ const initializeDarkMode = (): void => {
 
   const currentTheme = localStorage.getItem("theme");
   if (currentTheme === "dark") {
-    document.documentElement.classList.add("dark-theme");
+    document.documentElement.classList.add("dark");
   } else {
-    document.documentElement.classList.remove("dark-theme");
+    document.documentElement.classList.remove("dark");
   }
 };
 initializeDarkMode();

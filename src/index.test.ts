@@ -44,7 +44,7 @@ describe("DarkModeToggle Component", () => {
     toggle.click();
 
     expect(toggle.checked).toBe(!initialCheckedState);
-    expect(document.documentElement.classList.contains("dark-theme")).toBe(
+    expect(document.documentElement.classList.contains("dark")).toBe(
       !initialCheckedState,
     );
     expect(localStorage.getItem("theme")).toBe(
